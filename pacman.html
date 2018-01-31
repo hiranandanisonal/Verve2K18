@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="description" content="Animated Pacman Using Pure CSS">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Anmiated Pacman - Pure CSS</title>
+  <style>
+    body {
+      height:100%;
+      background:white;
+    }
+    .center {
+      display: flex;
+      justify-content: center;
+      align-items:center;
+    }
+    .circle {
+      border-radius: 50%;
+    }
+    .pacman {
+      width:100px;
+      height:100px;
+      background:blue;
+      overflow:hidden;
+    }
+    .eye {
+      width:15px;
+      height:15px;
+      background:white;
+      transform: translateX(10px) translateY(-30px)
+    }
+    .mouth {
+      animation:eat 0.3s alternate infinite;
+      animation-timing-function: linear;
+      position:absolute;
+      width:100px;
+      height:0;
+      border-top:50px solid transparent;
+      border-bottom:50px solid transparent;
+      border-right:100px solid white;
+    }
+    @keyframes eat {
+      from { 
+        border-top:60px solid transparent;
+        border-bottom:60px solid transparent;
+      }
+      to { 
+        border-top:0 solid transparent;
+        border-bottom:0 solid transparent;
+      }
+    }
+  </style>
+</head>
+<body>
+    <div class="pacman circle center">
+      <div class="eye circle"></div>
+      <div class="mouth circle"></div>
+    </div>
+</body>
+</html>
